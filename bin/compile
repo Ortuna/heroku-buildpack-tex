@@ -48,7 +48,7 @@ fi
 #install package dependencies
 apt-get install wget
 tlmgr update --all
-tlmgr install marvosym
+tlmgr install ifsym
 
 # Check for an essential binary to make sure it's installed
 if [ ! `which pdflatex` ]; then
