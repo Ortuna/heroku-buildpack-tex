@@ -46,7 +46,6 @@ else
 fi
 
 #install package dependencies
-apt-get install wget
 tlmgr update --all
 tlmgr install ifsym
 
