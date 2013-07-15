@@ -45,6 +45,10 @@ else
     echo $VERSION > $TEXLIVE_CACHE/VERSION
 fi
 
+#install package dependencies
+tlmgr update --all
+tlmgr install marvosym
+
 # Check for an essential binary to make sure it's installed
 if [ ! `which pdflatex` ]; then
     build-warn "TeX Live installation failed"
