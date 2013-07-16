@@ -45,10 +45,11 @@ else
     echo $VERSION > $TEXLIVE_CACHE/VERSION
 fi
 
-#install package dependencies
-apt-get install wget
-tlmgr update --all
-tlmgr install ifsym
+#install package dependencies.
+#expects a heroku-project-level folder called tex_dependencies
+package_dest_folder = $(kpsewhich -var-value=TEXMFHOME)
+mkdir $package_dest_folder
+mv /app/tex_dependencies/ $package_dest_folder
 
 # Check for an essential binary to make sure it's installed
 if [ ! `which pdflatex` ]; then
