@@ -49,7 +49,7 @@ fi
 #expects a heroku-project-level folder called tex_dependencies
 package_dest_folder=$(kpsewhich -var-value=TEXMFHOME)
 echo "latex dependency destination folder: $package_dest_folder"
-mkdir "$package_dest_folder"
+mkdir -p "$package_dest_folder"
 mv /app/tex_dependencies/ "$package_dest_folder"
 
 # Check for an essential binary to make sure it's installed
