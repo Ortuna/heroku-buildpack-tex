@@ -47,9 +47,8 @@ fi
 
 #install package dependencies.
 #expects a heroku-project-level folder called tex_dependencies
-package_dest_folder=$TEX_LIVE_CACHE/texmf-local/tex/latex/local
+package_dest_folder=$CACHE_DIR/.texlive/texmf-local/tex/latex/local
 echo "latex dependency destination folder: $package_dest_folder"
-mkdir -p "$package_dest_folder"
 mv "$BIN_DIR"/tex_dependencies/* "$package_dest_folder"
 texhash #find dependencies
 
