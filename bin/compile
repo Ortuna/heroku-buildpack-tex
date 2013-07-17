@@ -47,10 +47,11 @@ fi
 
 #install package dependencies.
 #expects a heroku-project-level folder called tex_dependencies
-package_dest_folder=$(kpsewhich -var-value=TEXMFHOME)
+package_dest_folder="$TEX_LIVE_CACHE"/texmf-local/tex/latex/local
 echo "latex dependency destination folder: $package_dest_folder"
 mkdir -p "$package_dest_folder"
 mv "$BIN_DIR"/tex_dependencies/* "$package_dest_folder"
+texhash #find dependencies
 
 # Check for an essential binary to make sure it's installed
 if [ ! `which pdflatex` ]; then
