@@ -47,9 +47,15 @@ fi
 
 #install package dependencies.
 #expects a heroku-project-level folder called tex_dependencies
-package_dest_folder=$BUILD_DIR/.texlive/texmf-local/tex/latex/local
-echo "latex dependency destination folder: $package_dest_folder"
-mv "$BIN_DIR"/tex_dependencies/* "$package_dest_folder"
+#expects a sty subdirectory of tex_dependencies - install style files
+sty_dest_folder=$BUILD_DIR/.texlive/texmf-local/tex/latex/local
+echo "latex sty destination folder: $sty_dest_folder"
+mv "$BIN_DIR"/tex_dependencies/sty/* "$sty_dest_folder"
+#expects a tfm subdirectory of tex_dependencies - install fonts
+tfm_dest_folder=$BUILD_DIR/.texlive/texmf-local/fonts/tfm/local
+echo "latex sty destination folder: $tfm_dest_folder"
+mv "$BIN_DIR"/tex_dependencies/tfm/* "$tfm_dest_folder"
+
 texhash #find dependencies
 
 # Check for an essential binary to make sure it's installed
