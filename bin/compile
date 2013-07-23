@@ -55,7 +55,7 @@ mv "$BIN_DIR"/tex_dependencies/sty/* "$sty_dest_folder"
 #expects a tfm subdirectory of tex_dependencies - install fonts
 tfm_dest_folder=$BUILD_DIR/.texlive/texmf-local/fonts/tfm/local
 echo "latex sty destination folder: $tfm_dest_folder"
-rm -rf "$sty_dest_folder"/*
+rm -rf "$tfm_dest_folder"/*
 mv "$BIN_DIR"/tex_dependencies/tfm/* "$tfm_dest_folder"
 
 texhash
