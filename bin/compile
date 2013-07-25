@@ -59,15 +59,15 @@ rm -rf "$tfm_dest_folder"/*
 mv "$BIN_DIR"/tex_dependencies/tfm/* "$tfm_dest_folder"
 #expects an afm subdirecotry - install adobe font metrics
 afm_dest_folder=$BUILD_DIR/.texlive/texmf-local/fonts/afm/local
-mkdir $afm_dest_folder
+mkdir -p $afm_dest_folder
 mv "$BIN_DIR"/tex_dependencies/afm/* "$afm_dest_folder"
 #expects a map file - for font maps
 map_dest_folder=$BUILD_DIR/.texlive/texmf-local/fonts/map/dvips
-mkdir $map_dest_folder
+mkdir -p $map_dest_folder
 mv "$BIN_DIR"/tex_dependencies/map/* "$map_dest_folder"
 #expects a pfb file - for postscript type1 outline
 pfb_dest_folder=$BUILD_DIR/.texlive/texmf-local/fonts/type1/local
-mkdir $pfb_dest_folder
+mkdir -p $pfb_dest_folder
 mv "$BIN_DIR"/tex_dependencies/pfb/* "$pfb_dest_folder"
 
 texhash
