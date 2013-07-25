@@ -72,6 +72,9 @@ mv "$BIN_DIR"/tex_dependencies/pfb/* "$pfb_dest_folder"
 
 texhash
 
+#update font maps
+updmap-sys --enable Map=hfbright.map
+
 # Check for an essential binary to make sure it's installed
 if [ ! `which pdflatex` ]; then
     build-warn "TeX Live installation failed"
