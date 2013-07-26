@@ -61,14 +61,21 @@ mv "$BIN_DIR"/tex_dependencies/tfm/* "$tfm_dest_folder"
 afm_dest_folder=$BUILD_DIR/.texlive/texmf-local/fonts/afm/local
 mkdir -p $afm_dest_folder
 mv "$BIN_DIR"/tex_dependencies/afm/* "$afm_dest_folder"
-#expects a map file - for font maps
+#expects a map folder - for font maps
 map_dest_folder=$BUILD_DIR/.texlive/texmf-local/fonts/map/dvips
 mkdir -p $map_dest_folder
 mv "$BIN_DIR"/tex_dependencies/map/* "$map_dest_folder"
-#expects a pfb file - for postscript type1 outline
+#expects a pfb folder - for postscript type1 outline
 pfb_dest_folder=$BUILD_DIR/.texlive/texmf-local/fonts/type1/local
 mkdir -p $pfb_dest_folder
 mv "$BIN_DIR"/tex_dependencies/pfb/* "$pfb_dest_folder"
+#expects a meta_fd folder - for metafont fonts
+meta_fd_dest_folder=$BUILD_DIR/.texlive/texmf-local/tex/latex/mfnfss
+mkdir -p $meta_fd_dest_folder
+mv "$BIN_DIR"/tex_dependencies/meta_fd/* "$meta_fd_dest_folder"
+#expects a mf folder - for metafont outlines
+mf_dest_folder=$BUILD_DIR/.texlive/texmf-local/fonts/source/local/
+mv "$BIN_DIR"/tex_dependencies/mf/* "$mf_dest_folder"
 
 texhash
 
