@@ -76,6 +76,9 @@ mv "$BIN_DIR"/tex_dependencies/meta_fd/* "$meta_fd_dest_folder"
 #expects a mf folder - for metafont outlines
 mf_dest_folder=$BUILD_DIR/.texlive/texmf-local/fonts/source/local/
 mv "$BIN_DIR"/tex_dependencies/mf/* "$mf_dest_folder"
+#expects an enc subdirectory
+enc_dest_folder=$BUILD_DIR/.texlive/texmf-local/dvips/local/
+mv "$BIN_DIR"/tex_dependencies/enc/* "$enc_dest_folder"
 
 texhash
 
@@ -88,6 +91,7 @@ updmap-sys --enable Map=cm-super-t2b.map
 updmap-sys --enable Map=cm-super-t2c.map
 updmap-sys --enable Map=cm-super-x2.map
 
+texhash
 
 
 # Check for an essential binary to make sure it's installed
