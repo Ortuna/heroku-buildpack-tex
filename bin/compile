@@ -77,7 +77,8 @@ mv "$BIN_DIR"/tex_dependencies/meta_fd/* "$meta_fd_dest_folder"
 mf_dest_folder=$BUILD_DIR/.texlive/texmf-local/fonts/source/local/
 mv "$BIN_DIR"/tex_dependencies/mf/* "$mf_dest_folder"
 #expects an enc subdirectory
-enc_dest_folder=$BUILD_DIR/.texlive/texmf-local/dvips/local/
+enc_dest_folder=$BUILD_DIR/.texlive/texmf-local/fonts/enc
+mkdir -p $enc_dest_folder
 mv "$BIN_DIR"/tex_dependencies/enc/* "$enc_dest_folder"
 
 texhash
