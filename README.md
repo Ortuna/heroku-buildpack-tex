@@ -17,8 +17,7 @@ for working with TeX documents. It bundles a working TeX Live environment into y
     -----> Fetching TeX Live 20120511
     ...
 
-As this currently does not auto-detect new fonts that have been added to the bin/tex_dependencies subfolders, the bin/compile shell script will have to be updated.
-For example, this script adds the [hfbright font package](http://www.ctan.org/tex-archive/fonts/ps-type1/hfbright). The compile script then adds the command:
+As this currently does not auto-detect new fonts that have been added to the bin/tex_dependencies subfolders, the bin/compile shell script will have to be updated manually for new fonts. For example, this script adds the [hfbright font package](http://www.ctan.org/tex-archive/fonts/ps-type1/hfbright). As the hfbright font package contains a map file, the following command had to be added to the bin/compile script:
 
     updmap-sys --enable Map=hfbright.map
 
