@@ -2,8 +2,7 @@ Heroku buildpack: TeX
 =====================
 
 This is a [Heroku buildpack](http://devcenter.heroku.com/articles/buildpacks)
-for working with TeX documents. In its raw form, it simply bundles a working
-TeX Live environment into your Heroku app and doesn't do anything else with it.
+for working with TeX documents. It bundles a working TeX Live environment into your Heroku app and doesn't do anything else with it. Additionally, this buildpack will move latex packages in the bin/tex_dependencies subfolders into locations where they can be detected by latex.
 
 
     $ ls
@@ -17,6 +16,11 @@ TeX Live environment into your Heroku app and doesn't do anything else with it.
     -----> TeX app detected
     -----> Fetching TeX Live 20120511
     ...
+
+As this currently does not auto-detect new fonts that have been added to the bin/tex_dependencies subfolders, the bin/compile shell script will have to be updated.
+For example, this script adds the [hfbright font package](http://www.ctan.org/tex-archive/fonts/ps-type1/hfbright). The compile script then adds the command:
+
+    updmap-sys --enable Map=hfbright.map
 
 This can be useful if you simply want to play around with TeX Live without
 having to build or install it yourself. You can pull it up on your instance
