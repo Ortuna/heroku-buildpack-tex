@@ -48,6 +48,9 @@ fi
 #install package dependencies.
 #expects a heroku-project-level folder called tex_dependencies
 #expects a sty subdirectory of tex_dependencies - install style files
+
+apt-get install lmodern
+
 sty_dest_folder=$BUILD_DIR/.texlive/texmf-local/tex/latex/local
 echo "latex sty destination folder: $sty_dest_folder"
 rm -rf "$sty_dest_folder"/*
